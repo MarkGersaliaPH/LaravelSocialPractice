@@ -31,4 +31,5 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::post('/update_profile','UserController@update');
 
+    Route::any('/add_comment/{id}','CommentsController@store');
 });

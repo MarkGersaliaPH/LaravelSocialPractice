@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Comment;
+use Auth;
 use Illuminate\Http\Request;
 
 class CommentsController extends Controller
@@ -33,9 +34,24 @@ class CommentsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($id,Request $request)
     {
-        //
+        //Get parameters request
+        $comment_content = $request->comment;
+        $post_id = $id;
+        $user_id = Auth::user()->id;
+        
+        //save to eloquent model
+        $comments = New Comment();
+        $comments->post_id = $post_id;
+        $comments->user_id = $user_id;
+        $comments->comment_content = $comment_content; 
+ 
+        if($comments->save()){
+            return redirect('/');
+        }
+
+        
     }
 
     /**

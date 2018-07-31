@@ -38,15 +38,19 @@ box-shadow: 0px 20px 76px 0px rgba(34,34,34,0.47);
     background: #fff !important;
 }
 
-.feed:hover{
+.feedDesign{
 
     border: #aaa 1px solid !important;
     z-index: 999999;
-    -webkit-transition:  .9s; /* Safari */
+    -webkit-transition:  .9s; 
     -webkit-box-shadow: 0px 20px 76px 0px rgba(34,34,34,0.47);
     -moz-box-shadow: 0px 20px 76px 0px rgba(34,34,34,0.47);
     box-shadow: 0px 20px 76px 0px rgba(34,34,34,0.47);
 
     cursor: pointer;
 
+}
+
+.feed{
+    cursor: pointer;
 }
