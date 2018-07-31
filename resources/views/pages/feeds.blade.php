@@ -36,7 +36,7 @@
                     <img alt="card-image" class="img img-fluid" src="{{'storage/uploads/'.$image->filename}}" alt="">
                     @endforeach  
         
-    <div class="card-footer">
+    <div class="card-footer" style="border-bottom:1px solid #eaeaea;">
         <a class="btn btn-link">
             <i class="far fa-thumbs-up"> </i> Likes 
         </a>
@@ -51,7 +51,7 @@
     </div>
     
     @foreach($feed->comment as $comment)  
-    <div class="media" style="margin:0 15px">
+    <div class="media" style="margin:15px 15px;" >
     <div class="media-left media-top" style="margin-right:20px;">
         @if($comment->user->profile_picture == null)
         <img src="http://www.fastrackerzkennel.com/wp-content/uploads/2014/03/male-placeholder-image.jpeg" class="rounded-circle" style="width:40px" alt="">
@@ -65,7 +65,7 @@
                 <div class="col">
                     <strong>{{$comment->user->name }}</strong>   
                 </div>
-                <div class="col text-right">
+                <div class="col text-right text-muted">
                     {{$comment->created_at->diffForHumans()}}
                 </div>
             </div>
@@ -122,3 +122,10 @@
 @endforeach  
 @endsection
 
+<script>
+    $(document).ready(function(){
+    $.get("demo_test.asp", function(data, status){
+        alert("Data: " + data + "\nStatus: " + status);
+    });
+})
+</script>
